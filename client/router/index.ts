@@ -3,27 +3,30 @@ import {
   createMemoryHistory,
   createWebHistory,
 } from 'vue-router';
-import HomeView from '@/pages/HomeView.vue';
-import AboutView from '@/pages/AboutView.vue';
+
+// @ts-ignore
+const pages = import.meta.glob('../pages/*.vue');
+const routes = Object.keys(pages).map((path) => {
+  const name = path.match(/\.\.\/pages\/(.*)\.vue$/)[1].toLowerCase();
+  const routePath = `/${name}`;
+  if (routePath === '/home') {
+    return {
+      path: '/',
+      name,
+      component: pages[path],
+    };
+  }
+  return {
+    path: routePath,
+    name,
+    component: pages[path],
+  };
+});
 
 export function createRouter() {
   return _createRouter({
     // @ts-ignore
     history: import.meta.env.SSR ? createMemoryHistory() : createWebHistory(),
-    routes: [
-      {
-        path: '/',
-        name: 'home',
-        component: HomeView,
-      },
-      {
-        path: '/about',
-        name: 'about',
-        // route level code-splitting
-        // this generates a separate chunk (About.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: AboutView,
-      },
-    ],
+    routes,
   });
 }

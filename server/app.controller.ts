@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import { Controller, Get, Header, Req } from '@nestjs/common';
 import { getViteServer } from './get-vite-server';
 import { resolveClientPath } from './utils/resolve-path';
@@ -7,7 +7,20 @@ import type { Request } from 'express';
 
 const TEMPLATE_PLACEHOLDER = '<!-- template-placeholder -->';
 
-@Controller('*')
+const ROUTES_PATH = readdirSync(resolveClientPath('pages'), {
+  encoding: 'utf-8',
+})
+  .filter((path) => /\.vue$/.test(path))
+  .map((path) => {
+    const name = path.match(/(.*)\.vue$/)[1].toLowerCase();
+    const routePath = `/${name}`;
+    if (routePath === '/home') {
+      return '';
+    }
+    return routePath;
+  });
+
+@Controller(ROUTES_PATH)
 export class AppController {
   constructor() {}
 

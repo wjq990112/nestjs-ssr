@@ -4,6 +4,7 @@ specifiers:
   '@nestjs/cli': ^8.1.8
   '@nestjs/common': ^8.2.5
   '@nestjs/core': ^8.2.5
+  '@nestjs/mapped-types': '*'
   '@nestjs/platform-express': ^8.2.5
   '@nestjs/schematics': ^8.0.5
   '@nestjs/testing': ^8.2.5
@@ -33,11 +34,13 @@ specifiers:
   typescript: ^4.5.4
   vite: ^2.7.12
   vue: ^3.2.26
+  vue-jest: ^5.0.0-alpha.10
   vue-router: ^4.0.12
 
 dependencies:
   '@nestjs/common': 8.2.5_88a789cb3f20cca25c3f70fe96f41643
   '@nestjs/core': 8.2.5_2d391bccf7bae46d184f78881868b795
+  '@nestjs/mapped-types': 1.0.1_aa8e181d047099a185145df0c4f9704b
   '@nestjs/platform-express': 8.2.5_dd9ef2e1e23f087665d46fe53bbbed58
   '@vitejs/plugin-vue': 2.0.1_vite@2.7.12+vue@3.2.26
   '@vitejs/plugin-vue-jsx': 1.3.3
@@ -71,6 +74,7 @@ devDependencies:
   ts-node: 10.4.0_c0a8ca172db2ce87bc71f1a1cb132fc8
   tsconfig-paths: 3.12.0
   typescript: 4.5.4
+  vue-jest: 5.0.0-alpha.10_656ae8cfa7e39c46ca1f3179dc551459
 
 packages:
 
@@ -506,6 +510,20 @@ packages:
       '@babel/core': 7.16.7
       '@babel/helper-plugin-utils': 7.16.7
 
+  /@babel/plugin-transform-modules-commonjs/7.16.8:
+    resolution: {integrity: sha512-oflKPvsLT2+uKQopesJt3ApiaIS2HW+hzHFcwRNtyDGieAeC/dIHZX8buJQ2J2X1rxGPy4eRcUijm3qcSPjYcA==, tarball: '@babel/plugin-transform-modules-commonjs/download/@babel/plugin-transform-modules-commonjs-7.16.8.tgz'}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/helper-module-transforms': 7.16.7
+      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-simple-access': 7.16.7
+      babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/plugin-transform-typescript/7.16.8_@babel+core@7.16.7:
     resolution: {integrity: sha512-bHdQ9k7YpBDO2d0NVfkj51DpQcvwIzIusJ7mEUaMlbZq3Kt/U47j24inXZHQ5MDiYpCs+oZiwnXyKedE8+q7AQ==, tarball: '@babel/plugin-transform-typescript/download/@babel/plugin-transform-typescript-7.16.8.tgz'}
     engines: {node: '>=6.9.0'}
@@ -900,6 +918,23 @@ packages:
       uuid: 8.3.2
     dev: false
 
+  /@nestjs/mapped-types/1.0.1_aa8e181d047099a185145df0c4f9704b:
+    resolution: {integrity: sha512-NFvofzSinp00j5rzUd4tf+xi9od6383iY0JP7o0Bnu1fuItAUkWBgc4EKuIQ3D+c2QI3i9pG1kDWAeY27EMGtg==, tarball: '@nestjs/mapped-types/download/@nestjs/mapped-types-1.0.1.tgz'}
+    peerDependencies:
+      '@nestjs/common': ^7.0.8 || ^8.0.0
+      class-transformer: ^0.2.0 || ^0.3.0 || ^0.4.0 || ^0.5.0
+      class-validator: ^0.11.1 || ^0.12.0 || ^0.13.0
+      reflect-metadata: ^0.1.12
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@nestjs/common': 8.2.5_88a789cb3f20cca25c3f70fe96f41643
+      reflect-metadata: 0.1.13
+    dev: false
+
   /@nestjs/platform-express/8.2.5_dd9ef2e1e23f087665d46fe53bbbed58:
     resolution: {integrity: sha512-TnOgJ5C63r+8/5xt9FHYkveTB9suBtvXaYliNVM0dNj0zQ7w7kMI5Mcy4TF6JkRuMN63uiqReNTBtmtF2kPsBg==, tarball: '@nestjs/platform-express/download/@nestjs/platform-express-8.2.5.tgz'}
     peerDependencies:
@@ -1188,6 +1223,14 @@ packages:
 
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha1-IPGClPeX8iCbX2XI47XI6CYdEnw=, tarball: '@types/stack-utils/download/@types/stack-utils-2.0.1.tgz'}
+    dev: true
+
+  /@types/strip-bom/3.0.0:
+    resolution: {integrity: sha1-FKjsOVbC6B7bdSB5CuzyHCkK69I=, tarball: '@types/strip-bom/download/@types/strip-bom-3.0.0.tgz'}
+    dev: true
+
+  /@types/strip-json-comments/0.0.30:
+    resolution: {integrity: sha1-mqMMBNshKpoGSdaub9UKzMQHSKE=, tarball: '@types/strip-json-comments/download/@types/strip-json-comments-0.0.30.tgz'}
     dev: true
 
   /@types/superagent/4.1.14:
@@ -1778,6 +1821,12 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: true
 
+  /atob/2.1.2:
+    resolution: {integrity: sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=, tarball: atob/download/atob-2.1.2.tgz}
+    engines: {node: '>= 4.5.0'}
+    hasBin: true
+    dev: true
+
   /axios/0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==, tarball: axios/download/axios-0.24.0.tgz}
     dependencies:
@@ -1803,6 +1852,12 @@ packages:
       slash: 3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /babel-plugin-dynamic-import-node/2.3.3:
+    resolution: {integrity: sha1-hP2hnJduxcbe/vV/lCez3vZuF6M=, tarball: babel-plugin-dynamic-import-node/download/babel-plugin-dynamic-import-node-2.3.3.tgz}
+    dependencies:
+      object.assign: 4.1.2
     dev: true
 
   /babel-plugin-istanbul/6.1.1:
@@ -2239,6 +2294,15 @@ packages:
       which: 2.0.2
     dev: true
 
+  /css/2.2.4:
+    resolution: {integrity: sha1-xkZ1XHOXHyu6amAeLPL9cbEpiSk=, tarball: css/download/css-2.2.4.tgz}
+    dependencies:
+      inherits: 2.0.4
+      source-map: 0.6.1
+      source-map-resolve: 0.5.3
+      urix: 0.1.0
+    dev: true
+
   /cssom/0.3.8:
     resolution: {integrity: sha1-nxJ29bK0Y/IRTT8sdSUK+MGjb0o=, tarball: cssom/download/cssom-0.3.8.tgz}
     dev: true
@@ -2288,6 +2352,11 @@ packages:
     resolution: {integrity: sha1-2MOkRKnGd0umDKatcmHDqU/V54M=, tarball: decimal.js/download/decimal.js-10.3.1.tgz}
     dev: true
 
+  /decode-uri-component/0.2.0:
+    resolution: {integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=, tarball: decode-uri-component/download/decode-uri-component-0.2.0.tgz}
+    engines: {node: '>=0.10'}
+    dev: true
+
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=, tarball: dedent/download/dedent-0.7.0.tgz}
     dev: true
@@ -2305,6 +2374,13 @@ packages:
     resolution: {integrity: sha1-xlYFHpgX2f8I7YgUd/P+QBnz730=, tarball: defaults/download/defaults-1.0.3.tgz}
     dependencies:
       clone: 1.0.4
+    dev: true
+
+  /define-properties/1.1.3:
+    resolution: {integrity: sha1-z4jabL7ib+bbcJT2HYcMvYTO6fE=, tarball: define-properties/download/define-properties-1.1.3.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      object-keys: 1.1.1
     dev: true
 
   /delayed-stream/1.0.0:
@@ -2874,6 +2950,13 @@ packages:
       chardet: 0.7.0
       iconv-lite: 0.4.24
       tmp: 0.0.33
+    dev: true
+
+  /extract-from-css/0.4.4:
+    resolution: {integrity: sha1-HqffLnx8brmSL6COitrqSG9vj5I=, tarball: extract-from-css/download/extract-from-css-0.4.4.tgz}
+    engines: {node: '>=0.10.0', npm: '>=2.0.0'}
+    dependencies:
+      css: 2.2.4
     dev: true
 
   /fast-deep-equal/3.1.3:
@@ -4371,6 +4454,21 @@ packages:
     resolution: {integrity: sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==, tarball: object-inspect/download/object-inspect-1.12.0.tgz}
     dev: true
 
+  /object-keys/1.1.1:
+    resolution: {integrity: sha1-HEfyct8nfzsdrwYWd9nILiMixg4=, tarball: object-keys/download/object-keys-1.1.1.tgz}
+    engines: {node: '>= 0.4'}
+    dev: true
+
+  /object.assign/4.1.2:
+    resolution: {integrity: sha1-DtVKNC7Os3s4/3brgxoOeIy2OUA=, tarball: object.assign/download/object.assign-4.1.2.tgz}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.3
+      has-symbols: 1.0.2
+      object-keys: 1.1.1
+    dev: true
+
   /on-finished/2.3.0:
     resolution: {integrity: sha1-IPEzZIGwg811M3mSoWlxqi2QaUc=, tarball: on-finished/download/on-finished-2.3.0.tgz}
     engines: {node: '>= 0.8'}
@@ -4786,6 +4884,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /resolve-url/0.2.1:
+    resolution: {integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=, tarball: resolve-url/download/resolve-url-0.2.1.tgz}
+    deprecated: https://github.com/lydell/resolve-url#deprecated
+    dev: true
+
   /resolve.exports/1.1.0:
     resolution: {integrity: sha1-XOhCuUsFFGwOAwdphdHQ5+SMkMk=, tarball: resolve.exports/download/resolve.exports-1.1.0.tgz}
     engines: {node: '>=10'}
@@ -4987,11 +5090,32 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /source-map-resolve/0.5.3:
+    resolution: {integrity: sha1-GQhmvs51U+H48mei7oLGBrVQmho=, tarball: source-map-resolve/download/source-map-resolve-0.5.3.tgz}
+    deprecated: See https://github.com/lydell/source-map-resolve#deprecated
+    dependencies:
+      atob: 2.1.2
+      decode-uri-component: 0.2.0
+      resolve-url: 0.2.1
+      source-map-url: 0.4.1
+      urix: 0.1.0
+    dev: true
+
   /source-map-support/0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==, tarball: source-map-support/download/source-map-support-0.5.21.tgz?cache=0&sync_timestamp=1637320322789&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fsource-map-support%2Fdownload%2Fsource-map-support-0.5.21.tgz}
     dependencies:
       buffer-from: 1.1.2
       source-map: 0.6.1
+    dev: true
+
+  /source-map-url/0.4.1:
+    resolution: {integrity: sha1-CvZmBadFpaL5HPG7+KevvCg97FY=, tarball: source-map-url/download/source-map-url-0.4.1.tgz}
+    deprecated: See https://github.com/lydell/source-map-url#deprecated
+    dev: true
+
+  /source-map/0.5.6:
+    resolution: {integrity: sha1-dc449SvwczxafwwRjYEzSiu19BI=, tarball: source-map/download/source-map-0.5.6.tgz}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /source-map/0.5.7:
@@ -5084,6 +5208,11 @@ packages:
   /strip-final-newline/2.0.0:
     resolution: {integrity: sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=, tarball: strip-final-newline/download/strip-final-newline-2.0.0.tgz}
     engines: {node: '>=6'}
+    dev: true
+
+  /strip-json-comments/2.0.1:
+    resolution: {integrity: sha1-PFMZQukIwml8DsNEhYwobHygpgo=, tarball: strip-json-comments/download/strip-json-comments-2.0.1.tgz?cache=0&sync_timestamp=1632753450600&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fstrip-json-comments%2Fdownload%2Fstrip-json-comments-2.0.1.tgz}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /strip-json-comments/3.1.1:
@@ -5397,6 +5526,15 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /tsconfig/7.0.0:
+    resolution: {integrity: sha1-hFOIdaTcIW5cSlQys6Tew9VOkbc=, tarball: tsconfig/download/tsconfig-7.0.0.tgz}
+    dependencies:
+      '@types/strip-bom': 3.0.0
+      '@types/strip-json-comments': 0.0.30
+      strip-bom: 3.0.0
+      strip-json-comments: 2.0.1
+    dev: true
+
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==, tarball: tslib/download/tslib-1.14.1.tgz}
     dev: true
@@ -5494,6 +5632,11 @@ packages:
       punycode: 2.1.1
     dev: true
 
+  /urix/0.1.0:
+    resolution: {integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=, tarball: urix/download/urix-0.1.0.tgz}
+    deprecated: Please see https://github.com/lydell/urix#deprecated
+    dev: true
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=, tarball: util-deprecate/download/util-deprecate-1.0.2.tgz}
 
@@ -5563,6 +5706,35 @@ packages:
     dependencies:
       vue: 3.2.26
     dev: false
+
+  /vue-jest/5.0.0-alpha.10_656ae8cfa7e39c46ca1f3179dc551459:
+    resolution: {integrity: sha1-QyaXezsCaLHe8UDztpETwtgvsJA=, tarball: vue-jest/download/vue-jest-5.0.0-alpha.10.tgz}
+    peerDependencies:
+      '@babel/core': 7.x
+      babel-jest: '>= 24 < 27'
+      jest: '>= 24 < 27 '
+      ts-jest: '>= 24 < 27 '
+      typescript: '>= 3.x'
+      vue: ^3.0.0-0
+    peerDependenciesMeta:
+      ts-jest:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@babel/plugin-transform-modules-commonjs': 7.16.8
+      chalk: 2.4.2
+      convert-source-map: 1.8.0
+      extract-from-css: 0.4.4
+      jest: 27.4.7_ts-node@10.4.0
+      source-map: 0.5.6
+      ts-jest: 27.1.2_2af153f539346dc2e3724aa03bf939c7
+      tsconfig: 7.0.0
+      typescript: 4.5.4
+      vue: 3.2.26
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /vue-router/4.0.12_vue@3.2.26:
     resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==, tarball: vue-router/download/vue-router-4.0.12.tgz}

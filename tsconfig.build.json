@@ -6,6 +6,7 @@
     "test",
     "dist",
     "**/*spec.ts",
+    "jest.config.*",
     "vite.config.*"
   ]
 }
