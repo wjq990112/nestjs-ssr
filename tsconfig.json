@@ -18,8 +18,7 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "client/*": ["client/*"],
-      "server/*": ["server/*"]
+      "@/*": ["client/*"]
     }
   }
 }
