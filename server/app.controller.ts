@@ -15,7 +15,7 @@ const ROUTES_PATH = readdirSync(resolveClientPath('pages'), {
     const name = path.match(/(.*)\.vue$/)[1].toLowerCase();
     const routePath = `/${name}`;
     if (routePath === '/home') {
-      return '';
+      return '/';
     }
     return routePath;
   });
