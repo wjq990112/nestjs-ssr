@@ -1,7 +1,7 @@
 {
   "name": "nestjs-ssr",
   "version": "0.0.1",
-  "description": "A template using Vite for SSR and NestJS for RESTful API.",
+  "description": "A template using NestJS for both SSR and RESTful API based on Vite.",
   "author": "wjq990112",
   "private": true,
   "license": "MIT",
