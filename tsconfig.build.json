@@ -4,6 +4,7 @@
     "node_modules",
     "client",
     "test",
+    "scripts",
     "dist",
     "**/*spec.ts",
     "jest.config.*",
