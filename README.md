@@ -39,10 +39,10 @@ $ npm install
 $ npm run start
 
 # watch mode
-$ npm run start:dev
+$ npm run watch
 
 # production mode
-$ npm run start:prod
+$ npm run prod
 ```
 
 ## Test
@@ -50,6 +50,9 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
+
+# unit tests watch mode
+$ npm run test:watch
 
 # e2e tests
 $ npm run test:e2e
